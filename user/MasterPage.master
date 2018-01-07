@@ -1,0 +1,283 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Taco Heaven</title>
+    
+    <!-- Default CSS -->
+    <link href="../css/default.css" rel="stylesheet" />
+
+    <!-- MasterPage CSS -->
+    <link href="../css/master.css" rel="stylesheet" />
+
+    <!-- Jquery CSS and Script -->
+    <link href="../css/jquery-ui.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="SiteHeader">
+
+            </div>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle btndropmenu" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <LoggedInTemplate>
+                            <button type="button" class="navbar-toggle menulinks userbtnnav" data-toggle="collapse" data-target=".navbar-user">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </LoggedInTemplate>
+                        <AnonymousTemplate>
+                            <button type="button" class="navbar-toggle menulinks userbtnnav" data-toggle="modal" data-target="#LoginModal">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </button>
+                        </AnonymousTemplate>
+                    </asp:LoginView>                    
+                    <button type="button" class="navbar-toggle menulinks searchbtnnav" data-toggle="collapse" data-target=".navbar-search">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <a class="navbar-brand hidden-xs" href="../Default.aspx"><span><img alt="logo" src="../img/logo.gif" height="120"/><a>   
+                    <a class="navbar-brand visible-xs" href="../Default.aspx"><img alt="logo" src="../img/logo.gif" height="110"/></a>
+                </div>
+                <div class="navbar-collapse collapse dropmenu">
+                    <ul class="hidden-xs nav navbar-nav navbar-right">
+                        <asp:Menu ID="Menu1" runat="server" DataSourceID="MainMenu" StaticDisplayLevels="2" StaticSubMenuIndent="0" DisappearAfter="1000" Orientation="Horizontal" RenderingMode="List" DynamicSelectedStyle-ItemSpacing="5">
+                            <StaticMenuItemStyle CssClass="MenuItem" />
+                            <StaticSelectedStyle CssClass="MenuItemSelected" />
+                            <DataBindings>
+                                <asp:MenuItemBinding DataMember="MenuItem" NavigateUrlField="url" TextField="title" />
+                            </DataBindings>
+                        </asp:Menu>
+                        <asp:XmlDataSource ID="MainMenu" runat="server" DataFile="~/MainMenu.xml"></asp:XmlDataSource>
+                    </ul>
+                    <ul class="visible-xs nav navbar-nav navbar-right removescroll">
+                        <asp:Menu ID="Menu2" runat="server" DataSourceID="XsMainMenu" StaticDisplayLevels="2" StaticSubMenuIndent="0" DisappearAfter="1000" Orientation="Vertical" RenderingMode="List">
+                            <StaticMenuItemStyle CssClass="XsMenuItem" />
+                            <StaticSelectedStyle CssClass="XsMenuItemSelected" />
+                            <DataBindings>
+                                <asp:MenuItemBinding DataMember="MenuItem" NavigateUrlField="url" TextField="title" />
+                            </DataBindings>
+                        </asp:Menu>
+                        <asp:XmlDataSource ID="XsMainMenu" runat="server" DataFile="~/MainMenu.xml"></asp:XmlDataSource>
+                    </ul>
+                </div>
+                <div class="navbar-search collapse">
+                    <br /><br />
+                    <asp:Panel ID="xsSearch" runat="server" CssClass="SearchBox" DefaultButton="xsSearchBtn" >
+                        <asp:TextBox ID="xsSearchBox" runat="server" Width="100%" Height="40px" ></asp:TextBox>
+                    </asp:Panel>
+                    <asp:ImageButton ID="xsSearchBtn" runat="server" CssClass="xsSearchBtn right" ImageUrl="~/img/search.gif" Height="18px" />
+                </div>
+                <div class="navbar-user collapse">
+                    <div class="right">
+                        <br />
+                        Du er logget inn som: <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
+                    </div>
+                    <br /><hr />
+                    <asp:HyperLink runat="server" Text="Endre profil" NavigateUrl="~/user/User.aspx" CssClass="LoginMenuItemS" />
+                    <asp:LoginView runat="server" ID="loginviewMenu">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="admin">
+                                <ContentTemplate>
+                                    <asp:HyperLink runat="server" Text="Ny anmeldelse" NavigateUrl="~/user/NewProduct.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Mine anmeldelser" NavigateUrl="~/user/MyProducts.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Mine kommentarer" NavigateUrl="~/user/MyComments.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Mine favoritter" NavigateUrl="~/user/MyFavourites.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Administrer anmeldelser" NavigateUrl="~/admin/AdminProducts.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Administrer brukere" NavigateUrl="~/admin/AdminUsers.aspx" CssClass="LoginMenuItemS" />
+                                    <asp:HyperLink runat="server" Text="Administrer kommentarer" NavigateUrl="~/admin/AdminComments.aspx" CssClass="LoginMenuItemS" />
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
+                        <LoggedInTemplate>
+                            <asp:HyperLink runat="server" Text="Ny anmeldelse" NavigateUrl="~/user/NewProduct.aspx" CssClass="LoginMenuItemS" />
+                            <asp:HyperLink runat="server" Text="Mine anmeldelser" NavigateUrl="~/user/MyProducts.aspx" CssClass="LoginMenuItemS" />
+                            <asp:HyperLink runat="server" Text="Mine kommentarer" NavigateUrl="~/user/MyComments.aspx" CssClass="LoginMenuItemS" />
+                            <asp:HyperLink runat="server" Text="Mine favoritter" NavigateUrl="~/user/MyFavourites.aspx" CssClass="LoginMenuItemS" />
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="LoginMenuItemS" LogoutPageUrl="~/Default.aspx" LogoutAction="Redirect" />
+                </div>
+            </div>
+        </div>
+
+            <div class="col-sm-12 mainbackground">
+
+            <div class="col-sm-2"></div>
+
+            <div class="col-sm-8 nospace maincontainer">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+            </div>
+            </div> 
+
+        <div>
+            <asp:ImageButton ID="Search" runat="server" ImageUrl="~/img/searchicon.gif" CssClass="SearchButton hidden-xs" />
+            <asp:Panel ID="lgSearchWrap" runat="server" CssClass="SearchBox" DefaultButton="Search" >
+                <asp:TextBox ID="lgSearchBox" runat="server" CssClass="lgSearchBox"></asp:TextBox>
+            </asp:Panel>
+
+            <asp:LoginView ID="LoginView2" runat="server">
+                <LoggedInTemplate>
+                    <a href="#" class="LoginButton hidden-xs" data-toggle="collapse" data-target="#LoginMenu">
+                      <span class="glyphicon glyphicon-user"></span>
+                    </a>
+
+                    <div id="LoginMenu" class="collapse LoginBox">
+                        <div class="loggedintxt">
+                            <br />
+                            Du er logget inn som: <asp:LoginName ID="LoginName1" runat="server" Font-Bold="true" />
+                            <hr />
+                        </div>
+                        <asp:HyperLink runat="server" Text="Endre profil" NavigateUrl="~/user/User.aspx" CssClass="LoginMenuItemL" />
+                        <asp:LoginView runat="server" ID="loginview3">
+                            <RoleGroups>
+                                <asp:RoleGroup Roles="admin">
+                                    <ContentTemplate>
+                                        <asp:HyperLink runat="server" Text="Ny anmeldelse" NavigateUrl="~/user/NewProduct.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Mine anmeldelser" NavigateUrl="~/user/MyProducts.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Mine kommentarer" NavigateUrl="~/user/MyComments.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Mine favoritter" NavigateUrl="~/user/MyFavourites.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Administrer anmeldelser" NavigateUrl="~/admin/AdminProducts.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Administrer brukere" NavigateUrl="~/admin/AdminUsers.aspx" CssClass="LoginMenuItemL" />
+                                        <asp:HyperLink runat="server" Text="Administrer kommentarer" NavigateUrl="~/admin/AdminComments.aspx" CssClass="LoginMenuItemL" />
+                                    </ContentTemplate>
+                                </asp:RoleGroup>
+                            </RoleGroups>
+                            <LoggedInTemplate>
+                                <asp:HyperLink runat="server" Text="Ny anmeldelse" NavigateUrl="~/user/NewProduct.aspx" CssClass="LoginMenuItemL" />
+                                <asp:HyperLink runat="server" Text="Mine anmeldelser" NavigateUrl="~/user/MyProducts.aspx" CssClass="LoginMenuItemL" />
+                                <asp:HyperLink runat="server" Text="Mine kommentarer" NavigateUrl="~/user/MyComments.aspx" CssClass="LoginMenuItemL" />
+                                <asp:HyperLink runat="server" Text="Mine favoritter" NavigateUrl="~/user/MyFavourites.aspx" CssClass="LoginMenuItemL" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                        <asp:LoginStatus ID="LoginStatus2" runat="server" CssClass="LoginMenuItemL" LogoutPageUrl="~/Default.aspx" LogoutAction="Redirect" />
+                    </div>
+                </LoggedInTemplate>
+            <AnonymousTemplate>
+                <a href="#" class="LoginButton hidden-xs" data-toggle="modal" data-target="#LoginModal">
+                  <span class="glyphicon glyphicon-user"></span>
+                </a>
+
+                <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">&times;</span>
+                                                <span class="sr-only">Avbryt</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <asp:HyperLink ID="Button1" CssClass="loginlink col-sm-6 col-xs-12" runat="server" Text="Logg inn" NavigateUrl="~/Login.aspx" />
+                                            <asp:HyperLink ID="Button2" CssClass="newuserlink col-sm-6 col-xs-12" runat="server" Text="Ny bruker" NavigateUrl="~/NewUser.aspx" />
+                                            <div class="clear"><br /></div>
+                                        </div>
+                                    </div
+                                </div>
+                            </div>
+                </AnonymousTemplate>
+            </asp:LoginView>
+        </div>
+    </div>
+    </form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $(".LoginButton").click(function () {
+                $("#login").show();
+                $(".PasswordRecoveryLink").show();
+                $("#newuser").hide();
+                $(".TermsOfUseLink").hide();
+                $(".loginlink").css("background-color", "#BD1D2D");
+                $(".loginlink").css("color", "#f9fbf7");
+            });
+            $(".userbtnnav").click(function () {
+                $("#login").show();
+                $(".PasswordRecoveryLink").show();
+                $("#newuser").hide();
+                $(".TermsOfUseLink").hide();
+                $(".loginlink").css("background-color", "#BD1D2D");
+                $(".loginlink").css("color", "#f9fbf7");
+            });
+            $(".loginlink").click(function () {
+                $("#login").show();
+                $(".PasswordRecoveryLink").show();
+                $("#newuser").hide();
+                $(".TermsOfUseLink").hide();
+                $(".loginlink").css("background-color", "#BD1D2D");
+                $(".loginlink").css("color", "white");
+                $(".newuserlink").css("background-color", "#f9fbf7");
+                $(".newuserlink").css("color", "#BD1D2D");
+            });
+            $(".newuserlink").click(function () {
+                $("#login").hide();
+                $(".PasswordRecoveryLink").hide();
+                $("#newuser").show();
+                $(".TermsOfUseLink").show();
+                $(".loginlink").css("background-color", "#f9fbf7");
+                $(".loginlink").css("color", "#BD1D2D");
+                $(".newuserlink").css("background-color", "#BD1D2D");
+                $(".newuserlink").css("color", "white");
+            });
+            $(".SearchButton").click(function () {
+                $("#searchBox").collapse('show');
+                $("#LoginMenu").collapse('hide');
+            });
+            $(".searchbtnnav").click(function () {
+                $(".navbar-user").collapse('hide');
+                $(".dropmenu").collapse('hide');
+            });
+            $(".userbtnnav").click(function () {
+                $(".navbar-search").collapse('hide');
+                $(".dropmenu").collapse('hide');
+            });
+            $(".LoginButton").click(function () {
+                $("#searchBox").collapse('hide');
+                $("#LoginMenu").collapse('show');
+            });
+            $(".btndropmenu").click(function () {
+                $(".navbar-search").collapse('hide');
+                $(".navbar-user").collapse('hide');
+            });
+            $(".container").click(function () {
+                $("#searchBox").collapse('hide');
+                $("#LoginMenu").collapse('hide');
+            });
+            $(".wrap").click(function () {
+                $("#searchBox").collapse('hide');
+                $("#LoginMenu").collapse('hide');
+                $(".navbar-search").collapse('hide');
+                $(".navbar-user").collapse('hide');
+                $(".dropmenu").collapse('hide');
+            });
+        });
+    </script> 
+</body>
+</html>

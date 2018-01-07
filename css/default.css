@@ -1,0 +1,371 @@
+﻿body {font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+.clear {clear:both;}
+
+.wrap {margin-top:131px;}
+
+.nospace {padding:0; margin:0;}
+
+.left {float:left;}
+
+.right {float:right;}
+
+.center {margin:auto;}
+
+.centertext {text-align:center;}
+
+.bold {font-weight:600;}
+
+.red {color:#BD1D2D;}
+
+.link, a.link:hover {color:#BD1D2D;}
+
+.contacticon {
+    margin-right:10px;
+}
+
+.SiteMapPath {
+    color:#e5e5e5;
+    font-size:11px;
+    margin-bottom:-8px;
+}
+
+a.SiteMapPath:hover {
+    text-decoration:none;
+    color:#BD1D2D;
+    font-size:11px;
+}
+
+.btnBack {
+    position:relative;
+    top:5px;
+    left:5px;
+    color:#BD1D2D;
+}
+
+.SaveProfile {
+    position:relative;
+    top:-12px;
+    right:5px;
+}
+
+.EditBtn {
+    position:relative;
+    right:-40px;
+    top:-15px;
+}
+
+/* Default */
+.lblWeeksHeadline {
+    font-size:18px;
+    line-height:32px;
+    vertical-align:middle;
+}
+
+.wrapWeeksProduct {
+    height:200px;
+    overflow:hidden;
+}
+
+.imgWeeksProduct {
+    height:100%;
+}
+
+.redline {
+    border-top:1px solid #BD1D2D;
+    border-bottom:1px solid #BD1D2D;
+    padding-top:20px;
+    padding-bottom:20px;
+    background-color:#F9FBF7;
+    color:black;
+}
+
+.TopProduct {
+    height:250px;
+    background-color:#F9FBF7;
+    text-align:center;
+    color:#BD1D2D;
+}
+
+a.hlTopProduct:hover, a.redline:hover {
+    text-decoration:none;
+}
+
+.imgTopProduct {
+    overflow:hidden;
+    height:150px;
+    width:100%;
+}
+
+.TopProdIcon {
+    margin-left:10px;
+    margin-right:3px;
+    width:15px;
+}
+
+/* Profile */
+.icons {
+    margin-right:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.editprofile {
+    position:absolute;
+    left:-10px
+}
+
+.editimg {
+    position:absolute;
+    left:20px;
+    top:5px;
+}
+
+.imagebox {
+    width:172px;
+    height:200px;
+    overflow:hidden;
+    border:1px solid #BD1D2D;
+    margin-right:20px;
+}
+
+/* Product */
+.ProductImage {
+    width:100%;
+}
+
+.SearchImage {
+    width:100%;
+    padding-right:10px;
+}
+
+.lgSearchBox {
+    width:100%;
+    height:50px;
+    padding-right:33px;
+    padding-left:10px;
+}
+
+.fileuploadstyle {
+    background-color:#E7FFDC;
+    border:1px solid #659C35;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.ProductHeadline{
+    width:100%;
+    font-size:50px;
+    text-align:center;
+}
+
+.ProductIconSpice {
+    width:30px;
+    margin-right:10px;
+    margin-top:-3px;
+}
+
+.EditViewIcon {
+    width:30px;
+    margin-left:10px;
+}
+
+.ProductIconCat, .EditIcon {
+    width:30px;
+    margin-right:10px;
+}
+
+.ProductLine {
+    margin-top:20px;
+    margin-bottom:10px;
+}
+
+.ProductInfo, .ProductPlace {
+    font-size:10px;
+}
+
+.Space {
+    margin:5px;
+}
+
+.ProductPlace {
+    line-height:30px;
+    vertical-align:middle;
+}
+
+.ProductBox {
+    margin-top:20px;
+}
+
+.ProductUnderHeadline {
+    font-size:18px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:10px;
+}
+
+.ProductUnderLine {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.timeinfo {
+    font-size:14px;
+    color:#BD1D2D;
+}
+
+.FremgangstidImg {
+    margin-top:-3px;
+}
+
+/* Allergens */
+
+.AllergensImg {
+    margin-bottom:-0px;
+    }
+
+.AllergensDelete {
+    margin-top:-5px;
+    float:left;
+    }
+
+.AllergensBox { 
+     height:10px; 
+     padding:10px; 
+     vertical-align:middle; 
+     line-height:10px; 
+     }
+
+/* Comments */
+.ProductAddComment {
+    border:0;
+    background-color:#BD1D2D;
+    color:white;
+    font-size:18px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-bottom:10px;
+    text-align:center;
+}
+
+.WarningImg {
+    width:50px;
+    margin-right:20px;
+    margin-top:-5px;
+}
+
+a.ProductAddComment:hover, a.ProductAddComment:focus {
+    text-decoration:none;
+    color:white;
+}
+
+.ProfilePic {
+    border:1px solid #BD1D2D;
+    width:55px;
+    height:64px;
+    margin-right:10px;
+    overflow:hidden;
+}
+
+.comment {
+    margin-top:10px;
+    margin-bottom:10px;
+    padding-top:10px;
+    background-color:#f9fbf7;
+}
+
+.commentLine {
+    border-left:1px solid black;
+}
+
+.commentTitle {
+    font-size:15px;
+    line-height:40px;
+    vertical-align:top;
+    font-weight:600;
+    color:black;
+}
+
+.commentBody {
+    display:block;
+    min-height:50px;
+    width:100%;
+    background-color:#f7f6f6;
+    padding:10px;
+}
+
+.commentUser, .commentDate {
+    font-size:12px;
+    color:black;
+}
+
+.commentDelete {
+    font-size:30px;
+    line-height:25px;
+    border:0;
+    background-color:#e5e5e5;
+    position:relative;
+    top:-2px;
+}
+
+/* GridViews */
+.HeaderStyle {
+    color:white;
+    background-color:#BD1D2D;
+    line-height:30px;
+    border:5px solid #BD1D2D;
+}
+
+a.HeaderStyle:hover {
+    text-decoration:none;
+}
+
+.RowStyle {
+    border-color:#BD1D2D;
+}
+
+.GoImg {
+    margin-top:5px;
+    align-self:center;
+}
+
+.PagerStyle a {
+    display:block;
+    height:20px;
+    width:20px;
+    line-height:20px;
+    color:#BD1D2D;
+    font-size:10px;
+    font-weight:bold;
+    border:1px solid #BD1D2D;
+    border-radius:20px;
+    text-align:center;
+    text-decoration:none;
+    margin:10px;
+    margin-right:3px;
+    margin-left:3px;
+}
+
+.PagerStyle span {
+    display:block;
+    height:20px;
+    width:20px;
+    line-height:20px;
+    color:white;
+    font-size:10px;
+    font-weight:bold;
+    border:1px solid #BD1D2D;
+    border-radius:20px;
+    text-align:center;
+    text-decoration:none;
+    margin:10px;
+    margin-right:3px;
+    margin-left:3px;
+    background-color:#BD1D2D;
+}
+
+.PageCount {
+    font-size:10px;
+    line-height:30px;
+    text-align:right;
+}

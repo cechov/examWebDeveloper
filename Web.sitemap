@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="TacoHeaven.no" >
+      <siteMapNode url="~/Login.aspx" title="Logg inn" />
+      <siteMapNode url="~/NewUser.aspx" title="Ny bruker" />
+      <siteMapNode url="~/admin/Admin.aspx" title="Administrator">
+        <siteMapNode url="~/admin/AdminComments.aspx" title="Administrer kommentarer" />
+        <siteMapNode url="~/admin/AdminProducts.aspx" title="Administrer produkter" />
+        <siteMapNode url="~/admin/AdminUsers.aspx" title="Brukeroversikt" />
+      </siteMapNode>
+      <siteMapNode url="~/user/User.aspx" title="Bruker">
+        <siteMapNode url="~/user/NewProduct.aspx" title="Ny anmeldelse" />
+        <siteMapNode url="~/user/MyProducts.aspx" title="Mine anmeldelser" />
+        <siteMapNode url="~/user/MyComments.aspx" title="Mine anmeldelser" />
+      <siteMapNode url="~/user/MyFavourites.aspx" title="Mine anmeldelser" />
+        <siteMapNode url="~/user/ChangePassword.aspx" title="Endre passord" />
+      </siteMapNode>
+      <siteMapNode url="~/Product.aspx" title="Produkt" />
+      <siteMapNode url="~/SearchResult.aspx" title="Søkeresultat" />
+      <siteMapNode url="~/Products.aspx" title="Produkter" />
+      <siteMapNode url="~/Contact.aspx" title="Kontakt oss" />
+    </siteMapNode>
+</siteMap>

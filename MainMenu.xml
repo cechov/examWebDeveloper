@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MenuItem url="~/default.aspx" title="Fremsiden">
+  <MenuItem url="~/Products.aspx" title="Anmeldelser"/>
+  <MenuItem url="~/Contact.aspx" title="Kontakt"/>
+</MenuItem>

@@ -1,0 +1,218 @@
+﻿.SiteHeader{
+    width:100%;
+    height:80px;
+    background-color:#e7ffdc;
+    background-image:url(../img/headBG.jpg);
+    background-size:cover;
+    background-position:center;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.mainbackground {
+    background-color:#f9fbf7;
+}
+
+.maincontainer {
+    padding-top:150px;
+    background-color:white;
+}
+
+/* Search and login sm->lg screen */
+.SearchButton, .LoginButton {
+    width:49px;
+    height:50px;
+    position:fixed;
+    right:0px;
+    padding:15px;
+    background-color:#BD1D2D;
+    color:white;
+}
+
+.SearchButton {
+    top:146px;
+}
+
+.LoginButton {
+    top:201px;
+    color:white;
+}
+
+a.SearchButton:hover, a.LoginButton:hover, a.loginlink:hover, a.newuserlink:hover, .okbtn:hover {
+    background-color:#e5e5e5;
+    color:#BD1D2D;
+    text-decoration:none;
+}
+
+a.SearchButton:focus, a.LoginButton:focus, a.loginlink:focus, a.newuserlink:focus {
+    background-color:#e5e5e5;
+    color:#BD1D2D;
+    text-decoration:none;
+}
+
+.SearchBox, .LoginBox {
+    display:block;
+    position:fixed;
+    background-color:white;
+    width:300px;
+    border:1px solid #e5e5e5;
+}
+
+.SearchBox {
+    top:146px;
+    right:50px;
+    height:51px;
+}
+
+.xsSearchBox {
+    display:block;
+    position:fixed;
+    margin-bottom:20px;
+}
+
+.LoginBox {
+    top:201px;
+    right:50px;
+}
+
+.loggedintxt {
+    padding-left:10px;
+}
+
+.loginlink, .newuserlink, .okbtn {
+    display:block;
+    text-align:center;
+    font-size:14px;
+    font-weight:500;
+    width:110px;
+    padding:10px;
+    padding-bottom:8px;
+    background-color:#BD1D2D;
+    color:#f9fbf7;
+    margin-bottom:-15px;
+    border:0;
+}
+
+.newuserlink {
+    border-left:3px solid white;
+}
+
+.okbtn {
+    border:none;
+    background-color:#BD1D2D;
+    color:#f9fbf7;
+}
+
+.PasswordRecoveryLink, .TermsOfUseLink {
+    display:block;
+    text-align:center;
+    padding-top:5px;
+    padding-bottom:5px;
+    color:black;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+a.PasswordRecoveryLink:hover, a.TermsOfUseLink:hover {
+    color:black;
+    text-decoration:none;
+}
+
+.txtbox{
+    width:100%;
+    padding:5px;
+
+}
+
+/* Search and login xs screen */
+.menulinks {
+    display:block;
+    width:42px;
+    padding-top:-5px;
+}
+
+a.LoginMenuItemS {
+    font-size:14px;
+    color:black;
+    display:block;
+    line-height:30px;
+    width:400px;
+    position:relative;
+    left:-15px;
+    padding-left:15px;
+    margin-bottom:5px;
+}
+
+a.LoginMenuItemS:hover, a.LoginMenuItemL:hover {
+    display:block;
+    background-color:#BD1D2D;
+    text-decoration:none;
+    color:white;
+}
+
+/* Menu sm->lg screen */
+a.MenuItem{
+    font-size:15px;
+    color:black;
+    display:block;
+    line-height:50px;
+    width:140px;
+}
+
+a.MenuItem:hover{
+    background-color:#BD1D2D;
+    color:#e7ffdc;
+    font-weight:500;
+}
+
+.MenuItem{
+    margin:auto;
+    background-color:#e5e5e5;
+    margin-left:5px;
+    text-align:center;
+}
+
+a.MenuItem.selected{
+    background-color:#e7ffdc;
+    color:black;
+    font-weight:500;
+}
+
+a.LoginMenuItemL {
+    font-size:14px;
+    color:black;
+    display:block;
+    line-height:30px;
+    width:299px;
+    padding-left:15px;
+    margin-bottom:5px;
+}
+
+/* Menu xs screen */
+.removescroll {
+    overflow-x:hidden;
+}
+
+
+a.XsMenuItem{
+    font-size:14px;
+    color:black;
+    line-height:30px;
+    width:400px;
+    margin-bottom:5px;
+}
+
+a.XsMenuItem:hover{
+    background-color:#BD1D2D;
+    color:white;
+    width:580%;
+}
+
+.XsMenuItem{
+    padding-left:20px;
+}
+
+a.XsMenuItem.selected{
+    background-color:#e7ffdc;
+    color:black;
+    font-weight:500;
+}
